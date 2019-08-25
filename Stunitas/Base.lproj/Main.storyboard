@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1CC-U1-IX5">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--이미지 검색-->
+        <scene sceneID="E6p-cV-kdP">
+            <objects>
+                <tableViewController id="dpA-TF-2ke" customClass="TableViewController" customModule="Stunitas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MEi-NR-ys5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="pAo-h0-lzD">
+                            <rect key="frame" x="0.0" y="328" width="414" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MovieCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="300" id="0kY-Wl-Wr1" customClass="TableViewCell" customModule="Stunitas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0kY-Wl-Wr1" id="578-Ju-j9J">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="299.66666666666669"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TNE-hu-tzP">
+                                            <rect key="frame" x="0.0" y="5" width="414" height="289.66666666666669"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                    <constraints>
+                                        <constraint firstItem="TNE-hu-tzP" firstAttribute="leading" secondItem="578-Ju-j9J" secondAttribute="leading" id="MhK-fa-bND"/>
+                                        <constraint firstAttribute="trailing" secondItem="TNE-hu-tzP" secondAttribute="trailing" id="XwM-xY-vcv"/>
+                                        <constraint firstAttribute="bottom" secondItem="TNE-hu-tzP" secondAttribute="bottom" constant="5" id="a0I-4F-FeJ"/>
+                                        <constraint firstItem="TNE-hu-tzP" firstAttribute="centerX" secondItem="578-Ju-j9J" secondAttribute="centerX" id="t1v-B8-NUN"/>
+                                        <constraint firstItem="TNE-hu-tzP" firstAttribute="top" secondItem="578-Ju-j9J" secondAttribute="top" constant="5" id="uMG-Ba-2p1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgView" destination="TNE-hu-tzP" id="2Kc-VO-cRr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dpA-TF-2ke" id="ubj-xQ-BCa"/>
+                            <outlet property="delegate" destination="dpA-TF-2ke" id="wpK-sg-iUl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="이미지 검색" id="yzX-gr-i8O"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEd-ZC-e9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065.217391304348" y="108.48214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q29-6k-JZP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CC-U1-IX5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sMt-qu-DRD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dpA-TF-2ke" kind="relationship" relationship="rootViewController" id="0pF-IA-GgG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3l-Ax-fsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155.07246376811597" y="108.48214285714285"/>
+        </scene>
+    </scenes>
+</document>
